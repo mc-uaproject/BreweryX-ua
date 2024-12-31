@@ -116,30 +116,30 @@ Player_WakeTeleport: 'Телепортація до точки пробудже�
 Player_ShopSealBrew: '&eРекомендується торгувати/продавати &6герметизовані &eнапої'
 Player_Drunkeness: Пияцтво
 Player_Hangover: Ваше похмілля
-# -- Ingredients in the Cauldron --
-# Which Ingredients are accepted by the Cauldron and the base potion resulting from them
-# You only need to add something here if you want to specify a custom name or color for the base potion
+# -- Інгредієнти у Котлі --
+# Які інгредієнти приймаються Котлом та основне зілля, яке виходить із них
+# Вам потрібно додати сюди лише те, якщо ви хочете вказати власну назву або колір для основного зілля
 
-# name: Name of the base potion coming out of the Cauldron (Formatting codes possible: such as &6)
+# name: Назва основного зілля, яке виходить із Котла (Можливе форматування: наприклад, &6)
 
-# ingredients: List of 'material/amount'
-#   With an item in your hand, use /brew ItemName to get its material for use in a recipe
-#   (Item-ids instead of material are not supported by bukkit anymore and will not work)
-#   A list of materials can be found here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+# ingredients: Список у форматі 'матеріал/кількість'
+#   Тримайте предмет у руці та використовуйте /brew ItemName, щоб отримати його матеріал для використання у рецепті
+#   (Ідентифікатори предметів замість матеріалу більше не підтримуються Bukkit і не працюватимуть)
+#   Список матеріалів можна знайти тут: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
 
-# color: Color of the base potion from a cauldron. Defaults to CYAN
-#   Usable Colors: DARK_RED, RED, BRIGHT_RED, ORANGE, YELLOW, PINK, PURPLE, BLUE, CYAN, WATER, TEAL, OLIVE, GREEN, LIME, BLACK, GREY, BRIGHT_GREY, WHITE
-#   Or RGB colors (hex: for example '99FF33') (with '') (search for "HTML color" on the internet)
+# color: Колір основного зілля з котла. За замовчуванням CYAN
+#   Доступні кольори: DARK_RED, RED, BRIGHT_RED, ORANGE, YELLOW, PINK, PURPLE, BLUE, CYAN, WATER, TEAL, OLIVE, GREEN, LIME, BLACK, GREY, BRIGHT_GREY, WHITE
+#   Або RGB-колір (hex: наприклад, '99FF33') (запис у лапках '') (пошукайте "HTML color" в інтернеті)
 
 # cookParticles:
-#   Color of the Particles above the cauldron at different cooking-times
-#   Color and minute during which each color should appear, i.e. one color at 8 minutes fading to another at 18 minutes.
-#   As List, each Color as name or RGB, see above. Written as 'Color/Minute'
-#   It will fade to the last color in the end, if there is only one color in the list, it will fade to grey
+#   Колір частинок над котлом на різних етапах приготування
+#   Колір і хвилина, під час якої з'являється кожен колір, тобто один колір на 8 хвилині, який змінюється на інший на 18 хвилині.
+#   Як список, кожен колір вказаний як назва або RGB, див. вище. Запис у форматі 'Колір/Хвилина'
+#   В кінці перейде до останнього кольору, якщо у списку лише один колір, він перейде у сірий
 
-# lore: List of additional text on the base potion. (Formatting codes possible: such as &6 or hex as #&<hex>)
+# lore: Список додаткового тексту на основному зіллі. (Можливе форматування: наприклад, &6 або hex як #&<hex>)
 
-# customModelData: Custom Model Data Tag. This is a number that can be used to add custom textures to the item.
+# customModelData: Тег користувацьких даних моделі. Це число, яке можна використовувати для додавання власних текстур до предмета.
 cauldron:
   ex:
     name: Приклад
