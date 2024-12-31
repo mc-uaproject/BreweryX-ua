@@ -1,0 +1,1271 @@
+#  Файл конфігурації для Brewery.jar
+
+# -- Налаштування --
+# Значення за замовчуванням записані у []
+
+# Файл мови, який буде використовуватися (знаходиться в plugins/Brewery/languages)
+
+language: en
+
+# Префікс, що використовується у повідомленнях
+pluginPrefix: '&2[Brewery]&f '
+
+# Якщо гравець прокидається вдома після виходу з гри у стані сильного сп'яніння (потрібен плагін /home!) [true]
+
+enableHome: true
+
+  # Тип телепортації додому: ['cmd: home']
+  # bed = Гравець телепортується до свого ліжка
+  # 'cmd: home' = Виконується команда /home. Гравець повинен мати права на її використання без затримки!
+  # 'cmd: spawn' = Виконується команда /spawn.\
+  # 'cmd: whatever' = Виконується команда /whatever.
+
+homeType: 'cmd: home'
+
+  # Якщо гравець "прокидається" у випадковому місці після тривалого перебування в стані сп'яніння (місця визначаються адміністратором за допомогою '/brew Wakeup add')
+
+# Гравець прокидається в найближчому з двох випадкових місць у своєму світі [true]
+
+enableWake: true
+
+# Якщо гравцеві потрібно кілька разів спробувати увійти у гру під час сильного сп'яніння [true]
+
+enableLoginDisallow: true
+
+# Якщо гравець зомліває (його викидає з сервера) через надмірне споживання алкоголю [false]
+
+enableKickOnOverdrink: false
+
+  # Якщо гравець блює при сильному сп'янінні (викидає предмет, вказаний нижче) [true]
+
+# Цей предмет неможливо підняти, і він залишається на землі до зникнення.
+
+enablePuke: true
+
+# Предмет, який випадає кілька разів при блюванні, але його неможливо підібрати [Soul_Sand]
+
+pukeItem: [Soul_Sand]
+
+  # Час у секундах, після якого предмет блювоти зникає (за замовчуванням у Minecraft 300 секунд = 5 хвилин) [60]
+
+# Якщо час зникнення предметів був змінений у spigot.yml, цей час змінюється відповідно.
+
+pukeDespawntime: 60
+
+# Наскільки сильно гравець хитається залежно від кількості випитого алкоголю. Може бути понад 100 або дорівнювати 0 [100]
+
+stumblePercent: 100
+
+# Показувати стан сп'яніння гравцеві, коли він п'є напій або їсть drainItem [true]
+
+showStatusOnDrink: true
+
+# Споживані предмети/сила. Зменшують рівень алкоголю на <сила> при споживанні. (список)
+
+drainItems:
+  Bread/4
+  Milk_Bucket/2
+
+  # Показувати частинки над казаном, якщо він містить інгредієнти та джерело тепла [true]
+# Змінюваний колір частинок може допомогти вчасно завершити приготування деяких рецептів
+
+enableCauldronParticles: true
+
+# Якщо частинки казана повинні бути мінімізовані [false]
+
+minimalParticles: false
+
+# Увімкнути створення та використання стола для запечатування напоїв (2 пляшки над 4 дошками) [true, true]
+
+craftSealingTable: true
+enableSealingTable: true
+
+# Завжди показувати зірки (1-5) на предметах відповідно до якості. Якщо false, зірки з'являються лише під час варіння [true]
+
+alwaysShowQuality: true
+
+# Завжди показувати рівень алкоголю на предметах. Якщо false, він буде видно тільки в пивоварні [false]
+
+alwaysShowAlc: false
+
+# Показувати, хто зварив напій [false]
+
+showBrewer: false
+
+# Якщо бочки створюються тільки тоді, коли на табличці є слово "barrel" (або його переклад іншою мовою) [true]
+
+requireKeywordOnSigns: true
+
+# Якщо дозрівання в -Minecraft- бочках увімкнено [true] і скільки напоїв можна в них помістити [6]
+
+ageInMCBarrels: true
+maxBrewsInMCBarrels: 6
+
+# Тривалість "року" у хвилинах під час дозрівання напоїв [20]
+
+agingYearDuration: 20
+
+# Збереження даних про використані інгредієнти та інші дані у всіх напоях Brewery. Може бути закодовано для запобігання читанню рецептів. [false]
+
+enableEncode: false
+encodeKey: 0
+
+# Увімкнути перевірку оновлень, використовуючи curseforge API [true]
+
+updateCheck: true
+
+# Інтервал автоматичного збереження у хвилинах [3]
+
+autosave: 3
+
+# Показувати повідомлення відладки в логах [false]
+
+debug: false
+
+# Версія конфігурації
+
+version: '3.1'
+
+# -- Визначення користувацьких предметів --
+# Визначений id можна використовувати в рецептах
+
+# matchAny: true, якщо достатньо, щоб одне з інформаційних значень співпадало
+# material: Тип предмета, який має бути
+# name: Назва предмета, яку має мати (можна використовувати форматувальні коди, наприклад &6)
+# lore: Що має бути в описі предмета
+# customModelData: Користувацькі дані моделі (Custom Model Data) в форматі списку, число, яке має бути у даних моделі предмета
+
+customItems:
+  # Три приклади предметів
+  ex-item:
+    # Предмет "Бар'єр" з назвою "Стіна" та вказаним рядком в описі
+    material: Barrier
+    name: 'Стіна'
+    lore:
+      - '&7Дуже добре захищена'
+
+  ex-item2:
+    # Використання matchAny: достатньо, щоб збіглося лише одне із зазначеного.
+    # У цьому випадку це один із типів дверей, або предмет під назвою "Двері з бука", або предмет із рядком 'Двері' в описі
+    matchAny: true
+    material:
+      - Acacia_Door
+      - Oak_Door
+      - Spruce_Door
+    name:
+      - 'Двері з бука'
+    lore:
+      - 'Двері'
+
+  rasp:
+    name: '&cМалина'
+
+  modelitem:
+    material: paper
+    customModelData:
+      - 10234
+      - 30334
+
+  blue-flowers:
+    matchAny: true
+    material:
+      - cornflower
+      - blue_orchid
+
+
+  # -- Інгредієнти для казана --
+  # Які інгредієнти приймає казан і базове зілля, яке виходить із них
+  # Додавайте сюди щось лише якщо хочете вказати власну назву або колір для базового зілля
+
+  # name: Назва базового зілля, яке виходить із казана (можна використовувати коди форматування, наприклад &6)
+  # ingredients: Список 'матеріал/кількість'
+  #   Тримаючи предмет у руці, використовуйте команду /brew ItemName, щоб отримати його матеріал для рецепта
+  #   (Item-ids замість material більше не підтримуються Bukkit і не працюватимуть)
+  #   Список матеріалів можна знайти тут: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+  # color: Колір базового зілля з казана. За замовчуванням CYAN
+  #   Доступні кольори: DARK_RED, RED, BRIGHT_RED, ORANGE, YELLOW, PINK, PURPLE, BLUE, CYAN, WATER, TEAL, OLIVE, GREEN, LIME, BLACK, GREY, BRIGHT_GREY, WHITE
+  #   Або RGB кольори (hex: наприклад '99FF33') (у дужках '') (шукайте "HTML color" в інтернеті)
+  # cookParticles:
+  #   Колір частинок над казаном у різний час приготування
+  #   Колір і хвилина, під час якої кожен колір має з'являтися, наприклад, один колір на 8 хвилині з переходом в інший на 18 хвилині.
+  #   У вигляді списку, кожен колір як назва або RGB, див. вище. Написано як 'Колір/Хвилина'
+  #   Наприкінці буде перехід до останнього кольору, якщо в списку лише один колір, буде перехід до сірого
+  # lore: Список додаткового тексту для базового зілля. (можна використовувати коди форматування, наприклад &6)
+  # customModelData: Тег користувацької моделі. Це число, яке можна використовувати для додавання користувацьких текстур до предмета.
+
+cauldron:
+  # Приклад з усіма можливими параметрами
+  ex:
+    name: Приклад
+    ingredients:
+      - Bedrock/2
+      - Diamond
+    color: BLACK
+    cookParticles:
+      - 'RED/5'
+      - 'WHITE/10'
+      - '800000/25' # бордовий
+    lore:
+      - Приклад базового зілля
+      - Ось як воно виходить із казана
+    customModelData: 545
+
+  # -- Один інгредієнт: --
+  wheat:
+    name: Ферментована пшениця
+    ingredients: Wheat
+    cookParticles:
+      - '2d8686/8' # темний аква
+
+  sugarcane:
+    name: Цукровий напій
+    ingredients: Sugar_Cane
+    color: 'f1ffad' # жовтувато-зелений
+    cookParticles:
+      - 'f1ffad/4'
+      - '858547/10' # темно-оливковий
+
+  sugar:
+    name: Цукрова вода
+    ingredients: Sugar
+    cookParticles:
+      - 'WHITE/4'
+      - 'BRIGHT_GREY/25'
+
+  apple:
+    name: Яблучний сік
+    ingredients: Apple
+
+  berries:
+    name: Виноградний сік
+    ingredients: Sweet_Berries
+    color: RED
+    cookParticles:
+      - 'ff6666/2' # яскраво-червоний
+      - 'RED/7'
+      - 'ac6553/13' # червоно-коричневий
+
+  potato:
+    name: Картопляне пюре
+    ingredients: Potato
+
+  grass:
+    name: Відвар трав
+    ingredients: Short_Grass
+    color: '99ff66' # яскраво-зелений
+    cookParticles:
+      - 'GREEN/2'
+      - '99ff99/20' # приглушений зелений
+
+  rmushroom:
+    name: Грибний напій
+    ingredients: Red_Mushroom
+    color: 'ff5c33' # бурштиново-червоний
+    cookParticles:
+      - 'fab09e/15' # приглушений червоний
+
+  bmushroom:
+    name: Грибний напій
+    ingredients: Brown_Mushroom
+    color: 'c68c53' # яскраво-коричневий
+    cookParticles:
+      - 'c68c53/15'
+
+  cocoa:
+    name: Шоколадний напій
+    ingredients: Cocoa_Beans
+    color: '804600' # мокка
+    cookParticles:
+      - 'a26011/1'
+      - '5c370a/3'
+      - '4d4133/8' # сіро-коричневий
+
+  milk:
+    name: Молочна вода
+    ingredients: Milk_Bucket
+    color: BRIGHT_GREY
+    cookParticles:
+      - 'fbfbd0/1' # жовтувато-білий
+      - 'WHITE/6'
+
+  bl_flow:
+    name: Блакитний напій
+    ingredients: blue-flowers
+    color: '0099ff' # небесно-блакитний
+    cookParticles:
+      - '0099ff'
+
+  cactus:
+    name: Аґавовий напій
+    ingredients: cactus
+    color: '00b300' # зелений кактус
+    cookParticles:
+      - '00b300/16'
+
+  poi_potato:
+    name: Отруйний бульйон
+    ingredients: Poisonous_Potato
+
+  egg:
+    name: Липкий напій
+    ingredients: Egg
+
+  oak_sapling:
+    name: Бульйон з трав
+    ingredients: Oak_Sapling
+
+  vine:
+    name: Відвар трав
+    ingredients: vine
+    color: '99ff66' # яскраво-зелений
+    cookParticles:
+      - 'GREEN/2'
+      - '99ff99/20' # приглушений зелений
+
+  rot_flesh:
+    name: Гнилий напій
+    ingredients: Rotten_Flesh
+    color: '263300' # коричнево-зелений
+    cookParticles:
+      - '263300/8'
+      - 'BLACK/20'
+
+  melon:
+    name: Сік кавуна
+    ingredients: melon_slice
+
+  wheat_seeds:
+    name: Гіркий напій
+    ingredients: Wheat_Seeds
+
+  melon_seeds:
+    name: Гіркий напій
+    ingredients: Melon_Seeds
+
+  pumpkin_seeds:
+    name: Гіркий напій
+    ingredients: Pumpkin_Seeds
+
+  bone_meal:
+    name: Кістковий напій
+    ingredients: bone_meal
+    color: BRIGHT_GREY
+
+  cookie:
+    name: Шоколадний сік
+    ingredients: Cookie
+    color: '804600' # мокка
+    cookParticles:
+      - 'a26011/1'
+      - '5c370a/3'
+      - '4d4133/8' # сіро-коричневий
+
+  fer_spid_eye:
+    name: Ферментоване око
+    ingredients: Fermented_Spider_Eye
+
+  ghast_tear:
+    name: Сумний напій
+    ingredients: ghast_tear
+
+  snowball:
+    name: Крижана вода
+    ingredients: Snowball
+
+  Gold_Nugget:
+    name: Золотий напій
+    ingredients: Gold_Nugget
+    color: 'ffd11a' # золотий
+    cookParticles:
+      - 'ffd11a'
+
+  glowstone_dust:
+    name: Світний напій
+    ingredients: Glowstone_Dust
+    color: 'ffff33' # яскраво-жовтий
+    cookParticles:
+      - 'ffff99/3'
+      - 'd9d926/15' # приглушений жовтий
+
+  # -- Кілька інгредієнтів: --
+  applemead_base:
+    name: Яблучно-цукровий напій
+    ingredients:
+      - Sugar_Cane/3
+      - Apple
+    color: 'e1ff4d' # зелено-жовтий
+    cookParticles:
+      - 'e1ff4d/4'
+
+  poi_grass:
+    name: Відвар з кислотних трав
+    ingredients:
+      - Short_Grass
+      - Poisonous_Potato
+    color: '99ff66' # яскраво-зелений
+    cookParticles:
+      - 'GREEN/2'
+      - '99ff99/20' # приглушений зелений
+
+  juniper:
+    name: Ялівцевий напій
+    ingredients:
+      - blue-flowers
+      - wheat
+    color: '00ccff' # аква
+    cookParticles:
+      - '00ccff/8'
+
+  gin_base:
+    name: Фруктовий ялівцевий напій
+    ingredients:
+      - blue-flowers
+      - wheat
+      - apple
+    color: '66e0ff' # світліший аква
+    cookParticles:
+      - '00ccff/5'
+
+  eggnog_base:
+    name: Гладка яєчна суміш
+    ingredients:
+      - egg
+      - sugar
+      - milk_bucket
+    color: 'ffecb3' # жовтогарячий
+    cookParticles:
+      - 'ffecb3/2'
+
+
+
+# -- Рецепти для Напоїв --
+
+# name: Різні назви для низької/середньої/високої якості (Можливе використання форматування, наприклад, &6)
+# ingredients: Список 'матеріал/кількість'
+#   Тримайте предмет у руці та використовуйте /brew ItemName, щоб дізнатися його матеріал для рецепта
+#   (Item-ids більше не підтримуються Bukkit і не працюватимуть)
+#   Список доступних матеріалів можна знайти тут: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+#   Предмети з плагінa в форматі 'plugin:id' (Наразі підтримуються ExoticGarden, Slimefun, MMOItems, Brewery)
+#   Або користувацький предмет, визначений раніше
+# cookingtime: Час у реальних хвилинах, протягом якого інгредієнти повинні кипіти
+# distillruns: Кількість дистиляцій, необхідних для отримання ідеального алкоголю (0=без дистиляції)
+# distilltime: Тривалість (у секундах) одного циклу дистиляції (0=за замовчуванням 40 сек). У Minecraft стандарт 20 сек
+# wood: Деревина для бочки 0=будь-яка, 1=Береза, 2=Дуб, 3=Джунглева, 4=Смерека, 5=Акація, 6=Темний Дуб, 7=Багряна, 8=Спотворена, 9=Манґрова, 10=Вишнева, 11=Бамбукова (12=Різьблена мідь)
+#   Бочка з Minecraft виготовлена з дуба
+# age: Час у днях Minecraft, протягом якого напій має настоюватися у бочці (0=без настоювання)
+# color: Колір напою після дистиляції/витримки.
+#   Доступні кольори: DARK_RED, RED, BRIGHT_RED, ORANGE, YELLOW, PINK, PURPLE, BLUE, CYAN, WATER, TEAL, OLIVE, GREEN, LIME, BLACK, GREY, BRIGHT_GREY, WHITE
+#   Або RGB кольори (шестнадцяткові: наприклад, '99FF33') (у лапках) (пошукайте "HTML color" в Інтернеті)
+# difficulty: 1-10 точність, необхідна для отримання хорошої якості (1 = низька точність/легко, 10 = висока точність/важко)
+# alcohol: Абсолютна кількість алкоголю 0-100 у досконалому напої (додається безпосередньо гравцеві, де 100 означає втрату свідомості)
+# lore: Список додаткового тексту на готовому напої. (Можливе форматування, наприклад, &6)
+#   Специфічний опис для якості можливий за допомогою + (низька якість), ++ (середня якість), +++ (висока якість), додається до початку рядка.
+# servercommands: Список команд, які виконує -Сервер-, коли напій випивається (Можна використовувати %player_name% %quality%)
+# playercommands: Список команд, які виконує -Гравець-, коли напій випивається (Можна використовувати %player_name% %quality%)
+#   Специфічні команди для якості можливі за допомогою + (низька якість), ++ (середня якість), +++ (висока якість).
+# drinkmessage: Повідомлення в чат гравцеві, коли напій випивається
+# drinktitle: Заголовок на екрані гравця, коли напій випивається
+# glint: Чи повинен предмет мати ефект блиску (чарівний блиск) (true/false)
+# customModelData: Спеціальні дані моделі. Це число, яке можна використовувати для додавання текстур до предмета.
+#   Можна вказати одне для всіх або одне для кожної якості, розділені через /
+# effects: Список ефект/рівень/тривалість. Спеціальний ефект напою при питті, тривалість у секундах.
+#   Можливі ефекти: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/potion/PotionEffectType.html
+#   Можна вказати діапазони рівня або тривалості, наприклад, 'SPEED/1-2/30-40' = рівень 1 і 30 сек у найгіршому випадку та рівень 2 і 40 сек у найкращому.
+#   Також підтримуються спадні діапазони, наприклад, 'POISON/3-1/20-5' для слабших ефектів при високій якості.
+#   Максимальна тривалість: 1638 сек. Миттєві ефекти не потребують зазначення тривалості.
+
+recipes:
+  # Приклад з усіма можливими елементами:
+  ex:
+    name: Поганий приклад/Приклад/Гарний приклад
+    ingredients:
+      - Diamond/1
+      - Spruce_Planks/8
+      - Bedrock/1
+      - Brewery:Wheatbeer/2
+      - ex-item/4
+    cookingtime: 3
+    distillruns: 2
+    distilltime: 60
+    wood: 4
+    age: 11
+    color: DARK_RED
+    difficulty: 3
+    alcohol: 14
+    lore:
+      - Це приклад напою
+      - ++ Просто нормальний приклад
+      - Цей текст буде на напої
+      - + Пахне огидно
+      - ++ Пахне нормально
+      - +++ Пахне дуже добре
+    servercommands:
+      - +++ weather clear
+      - + weather rain
+    playercommands:
+      - homes
+    drinkmessage: Смакує добре
+    drinktitle: Зігріває зсередини
+    glint: true
+    customModelData: 556/557/557
+    effects:
+      - FIRE_RESISTANCE/20
+      - HEAL/1
+      - WEAKNESS/2-3/50-60
+      - POISON/1-0/20-0
+
+  wheatbeer:
+    name: Несвіже Пшеничне пиво/Пшеничне пиво/Чудове Пшеничне пиво
+    ingredients:
+      - Wheat/3
+    cookingtime: 8
+    distillruns: 0
+    wood: 1
+    age: 2
+    color: 'ffb84d' # Помаранчевий
+    difficulty: 1
+    alcohol: 5
+    lore: +++ &8Освіжає
+
+  beer:
+    name: Несвіже Пиво/Пиво/Чудове Пиво
+    ingredients:
+      - Wheat/6
+    cookingtime: 8
+    distillruns: 0
+    wood: 0
+    age: 3
+    color: 'ffd333'
+    difficulty: 1
+    lore:
+      - +++ &8Свіжий смак
+    alcohol: 6
+
+  darkbeer:
+    name: Несвіже Темне Пиво/Темне Пиво/Чудове Темне Пиво
+    ingredients:
+      - Wheat/6
+    cookingtime: 8
+    distillruns: 0
+    wood: 6
+    age: 8
+    color: '650013'
+    difficulty: 2
+    lore:
+      - +++ &8Смажений смак
+    alcohol: 7
+
+  wine:
+    name: Червоне Вино
+    ingredients:
+      - Sweet_Berries/5
+    cookingtime: 5
+    distillruns: 0
+    wood: 0
+    age: 20
+    color: RED
+    difficulty: 4
+    alcohol: 8
+    lore:
+      - '+ &8Жорстке'
+      - '+ &8Закупорене'
+      - '++ &8М’яке'
+      - '+++ &8Повноцінне'
+
+  mead:
+    name: Дивний Медовий Напій/Медовий Напій/&6Золотий Медовий Напій
+    ingredients:
+      - Sugar_Cane/6
+    cookingtime: 3
+    distillruns: 0
+    wood: 2
+    age: 4
+    color: ORANGE
+    difficulty: 2
+    lore:
+      - +++ Має золотистий відтінок
+    alcohol: 9
+
+  ap_mead:
+    name: Яблучний Медовий Напій/Солодкий Яблучний Напій/&6Золотий Солодкий Яблучний Напій
+    ingredients:
+      - Sugar_Cane/6
+      - Apple/2
+    cookingtime: 4
+    distillruns: 0
+    wood: 2
+    age: 4
+    color: ORANGE
+    difficulty: 4
+    alcohol: 11
+    lore:
+      - +Хіба тут є яблука?
+      - ++Освіжаючий смак яблук
+      - +++Солодкий натяк на яблука
+    effects:
+      - WATER_BREATHING/1-2/150
+
+  cidre:
+    name: Поганий Сидр/Яблучний Сидр/Чудовий Яблучний Сидр
+    ingredients:
+      - Apple/14
+    cookingtime: 7
+    distillruns: 0
+    wood: 0
+    age: 3
+    color: 'f86820'
+    difficulty: 4
+    alcohol: 7
+
+  apple_liquor:
+    name: Кислий Яблучний Лікер/Яблучний Лікер/Кальвадос
+    ingredients:
+      - Apple/12
+    cookingtime: 16
+    distillruns: 3
+    wood: 5
+    age: 6
+    color: BRIGHT_RED
+    difficulty: 5
+    alcohol: 14
+    lore:
+      - +Кислий, як кислота
+      - +++ Хороший яблучний лікер
+
+  whiskey:
+    name: Неохайний Віскі/Віскі/Шотландський Віскі
+    ingredients:
+      - Wheat/10
+    cookingtime: 10
+    distillruns: 2
+    distilltime: 50
+    wood: 4
+    age: 18
+    color: ORANGE
+    difficulty: 7
+    alcohol: 26
+    lore: '&7Односолодовий'
+
+  rum:
+    name: Гіркий Ром/Пряний Ром/&6Золотий Ром
+    ingredients:
+      - Sugar_Cane/18
+    cookingtime: 6
+    distillruns: 2
+    distilltime: 30
+    wood: 2
+    age: 14
+    color: DARK_RED
+    difficulty: 6
+    alcohol: 30
+    effects:
+      - FIRE_RESISTANCE/1/20-100
+      - POISON/1-0/30-0
+    lore:
+      - +&8Занадто гіркий, щоб пити
+      - ++&8Пряний завдяки бочці
+      - +++&eПряне золото
+
+  vodka:
+    name: Паршива Горілка/Горілка/Козацька Горілка
+    ingredients:
+      - Potato/10
+    cookingtime: 15
+    distillruns: 3
+    age: 0
+    color: WHITE
+    difficulty: 4
+    alcohol: 20
+    lore: + &8Майже неможливо пити
+    effects:
+      - WEAKNESS/15
+      - POISON/10
+
+  shroom_vodka:
+    name: Грибна Горілка/Грибна Горілка/Світна Грибна Горілка
+    ingredients:
+      - Potato/10
+      - Red_Mushroom/3
+      - Brown_Mushroom/3
+    cookingtime: 18
+    distillruns: 5
+    age: 0
+    color: 'ff9999' # Рожево-червоний
+    difficulty: 7
+    alcohol: 18
+    lore: +++&aСвітиться в темряві
+    effects:
+      - WEAKNESS/80
+      - CONFUSION/27
+      - NIGHT_VISION/50-80
+      - BLINDNESS/12-2
+      - SLOW/10-3
+
+  gin:
+    name: Блідий Джин/Джин/Старий Том Джин
+    ingredients:
+      - Wheat/9
+      - blue-flowers/6  # Користувацький предмет: Сині орхідеї або волошки
+      - Apple/1
+    cookingtime: 6
+    distillruns: 2
+    color: '99ddff' # Дуже світло-блакитний
+    difficulty: 6
+    alcohol: 20
+    lore:
+      - ++ З деяким присмаком ялівцю
+      - +++ Ідеально оброблений ялівцем
+
+  tequila:
+    name: Мескаль/Текіла/Текіла Аньєхо
+    ingredients:
+      - cactus/8
+    cookingtime: 15
+    distillruns: 2
+    color: 'f5f07e' # Зелено-оранжевий
+    difficulty: 5
+    wood: 1
+    age: 12
+    alcohol: 20
+    lore: Дух пустелі
+
+  absinthe:
+    name: Отруйний Абсент/Абсент/Міцний Абсент
+    ingredients:
+      - Short_Grass/15
+    cookingtime: 3
+    distillruns: 6
+    distilltime: 80
+    color: GREEN
+    difficulty: 8
+    alcohol: 42
+    effects:
+      - POISON/15-25
+    lore: '+++&8Лікер високої міцності'
+
+  gr_absinthe:
+    name: Поганий Абсент/Зелений Абсент/Яскраво-зелений Абсент
+    ingredients:
+      - Short_Grass/17
+      - Poisonous_Potato/2
+    cookingtime: 5
+    distillruns: 6
+    distilltime: 85
+    color: LIME
+    difficulty: 9
+    alcohol: 46
+    effects:
+      - POISON/25-40
+      - HARM/2
+      - NIGHT_VISION/40-60
+    lore: '&aВиглядає отруйним'
+
+  potato_soup:
+    name: Картопляний суп
+    ingredients:
+      - Potato/5
+      - Short_Grass/3
+    cookingtime: 3
+    color: ORANGE
+    difficulty: 1
+    effects:
+      - HEAL/0-1
+      -
+  coffee:
+    name: Несвіжа кава/Кава/Міцна кава
+    ingredients:
+      - Cocoa_Beans/12
+      - Milk_Bucket/2
+    cookingtime: 2
+    color: BLACK
+    difficulty: 3
+    alcohol: -6
+    lore: + &8Мабуть, тижневої давності
+    effects:
+      - REGENERATION/1/2-5
+      - SPEED/1/30-140
+      -
+  eggnog:
+    name: Яєчний лікер/Гоголь-моголь/Шотландський Фліп
+    ingredients:
+      - Egg/5
+      - Sugar/2
+      - Milk_Bucket/1
+    cookingtime: 2
+    color: 'ffe680'
+    difficulty: 4
+    alcohol: 10
+    wood: 0
+    age: 3
+    lore: Зроблено з сирих яєць
+
+  ambroziya:
+    name: Ядовита Амброзія/Амброзія/Фантастична Амброзія
+    ingredients:
+      - Dragon_Breath/1
+      - Honey_Bottle/1
+      - Golden_Apple/1
+      - Nether_Star/1
+      - Glistering_Melon_Slice/1
+    cookingtime: 8
+    color: '6a329f'
+    difficulty: 2
+    alcohol: 4
+    wood: 0
+    age: 0
+    effects:
+      - RESISTANCE/1/40-60
+      - ABSORPTION/3/40-60
+      - SPEED/3/40-60
+    lore:
+      - '++ &7Зроблено з найкращих інгредієнтів у світі'
+
+
+  # Я не хочу додавати більше рецептів у конфігурацію за замовчуванням, оскільки вони будуть публічними і користувачі зможуть скористатися ними для шахрайства.
+# Адміністратор серверу може змінювати та додавати рецепти, щоб гравці не могли підглядати рецепти з конфігурації за замовчуванням.
+# Деякі приклади рецептів, які можна використати:
+
+# g_vodka:
+#   name: 'Протухла Водка/&6Золота Водка/&6Мерехтлива Золота Водка'
+#   ingredients:
+#     - Potato/10
+#     - Gold_Nugget/2
+#   cookingtime: 18
+#   distillruns: 3
+#   age: 0
+#   color: ORANGE
+#   difficulty: 6
+#   alcohol: 20
+#   effects:
+#     - WEAKNESS/28
+#     - POISON/4
+
+# fire_whiskey:
+#   name: Пороховий Віскі/Палаючий Віскі/Обпалюючий Віскі
+#   ingredients:
+#     - Wheat/10
+#     - Blaze_Powder/2
+#   cookingtime: 12
+#   distillruns: 3
+#   distilltime: 55
+#   wood: 4
+#   age: 18
+#   color: ORANGE
+#   difficulty: 7
+#   alcohol: 28
+#   drinkmessage: 'Ви відчуваєте палаюче тепло у роті'
+
+# Без алкоголю:
+
+# hot_choc:
+#   name: Гарячий Шоколад
+#   ingredients:
+#     - cookie/3
+#   cookingtime: 2
+#   color: DARK_RED
+#   difficulty: 2
+#   effects:
+#     - FAST_DIGGING/40
+
+# iced_coffee:
+#   name: Водяна Кава/Кава з льодом/Міцна Кава з льодом
+#   ingredients:
+#     - cookie/8
+#     - snowball/4
+#     - milk_bucket/1
+#   cookingtime: 1
+#   color: BLACK
+#   difficulty: 4
+#   alcohol: -8
+#   effects:
+#     - REGENERATION/30
+#     - SPEED/10
+
+# Ідеї для інших рецептів:
+# Лікер з кульбаб,
+# Буряковий спирт,
+# Лікер з маку: Макум/Гранд Мак,
+# Лікер з бамбука: Chu Yeh Ching,
+# Кашаса,
+# Коньяк,
+# Саке,
+# Бурбон,
+# Самогон,
+# Різні види вин,
+# Бренді,
+# Аперитиви,
+# тощо, а також варіації, наприклад:
+# Пиво з гарбузовими спеціями,
+# Горілка з дині.
+
+# У Minecraft є безліч предметів, таких як ліани, молоко та предмети, додані плагінами, які можна використовувати як чудові інгредієнти.
+
+# -- Сумісність із плагінами --
+
+# Увімкнути перевірку інших плагінів (якщо встановлено) для дозволів на використання бочок [true].
+# Плагіни 'Landlord' та 'Protection Stones' використовують прапорець WorldGuard. 'ClaimChunk' підтримується нативно.
+useWorldGuard: true
+useLWC: true
+useGriefPrevention: true
+useTowny: true
+useBlockLocker: true
+useGMInventories: true
+
+# Використовувати віртуальну скриню під час відкриття бочки для перевірки всіх інших плагінів захисту.
+# Це може збивати плагіни анти-читу, але загалом є корисним.
+# Використовуйте це для плагіна 'Residence' та інших, які не перевіряють всі випадки у події PlayerInteractEvent.
+useVirtualChestPerms: false
+
+
+# Увімкнути логування інвентарів бочок у LogBlock [true]
+useLogBlock: true
+
+# -- MultiServer/BungeeCord --
+# Якщо Brewery використовується на декількох серверах, з'єднаних через BungeeCord,
+# можна використовувати спільну базу даних для синхронізації стану сп'яніння гравців та можливості обміну закодованими напоями між ними.
+
+multiServerDB:
+  # Увімкнення використання бази даних
+  enabled: false
+  # Синхронізація сп'яніння гравців між серверами
+  syncDrunkeness: true
+  host: localhost
+  port: '3306'
+  user: minec
+  password: xyz
+  database: base
+
+# -- Різні інші налаштування --
+
+# Якщо предмети у другій руці також додаються в казан [false]
+useOffhandForCauldron: false
+
+# Якщо дані про бочки та казани можуть завантажуватися асинхронно/у фоновому режимі [true]
+loadDataAsync: true
+
+# Час (у днях), протягом якого дані про сп'яніння залишаються в пам'яті після виходу гравця, щоб застосувати похмілля тощо [7]
+hangoverDays: 7
+
+# Забарвлення інформації про предмет (опису) залежно від якості, поки він 1. у бочці та/або 2. у казані [true, true]
+colorInBarrels: true
+colorInBrewer: true
+
+# Якщо Велика Бочка може відкриватися кліком по будь-якому блоку, а не тільки по Вивісці або Центральному Блоку. Це завжди так для Малих Бочок. [true]
+openLargeBarrelEverywhere: true
+
+# Дозволити виливати напої у вирву для утилізації напоїв, зберігаючи скляну пляшку [true]
+brewHopperDump: true
+
+# -- Налаштування спотворення чату --
+
+# Якщо текст у чаті спотворюється, коли гравець п'яний, щоб виглядати як "п'яне писання".
+# Ступінь спотворення залежить від рівня сп'яніння гравця.
+# Нижче наведені налаштування, що та як змінюється у тексті чату.
+enableChatDistortion: true
+
+# Логувати у серверний лог те, що гравець насправді написав, до спотворення слів [false]
+logRealChat: false
+
+# Текст після зазначених команд буде спотворюватися, якщо гравець п'яний (список) [- /gl]
+distortCommands:
+  - /gl
+  - /global
+  - /fl
+  - /s
+  - /letter
+  - /g
+  - /l
+  - /lokal
+  - /local
+  - /mail send
+  - /m
+  - /msg
+  - /w
+  - /whisper
+  - /reply
+  - /r
+  - /t
+  - /tell
+
+# Спотворювати текст, написаний на табличці, якщо гравець п'яний [false]
+distortSignText: false
+
+
+# Огорнути текст у чаті цими символами, щоб обійти спотворення чату (використовуйте "," як розділювач) (список) [- '[,]']
+# Приклад чату: Hello i am drunk *I am testing Brewery*
+distortBypass:
+  - '*,*'
+  - '[,]'
+
+# words: Слова та літери, які будуть змінені під час спілкування у чаті, коли гравець п'яний.
+# Вони обробляються по черзі, і написане речення змінюється в цьому порядку.
+
+# replace: Слово або літера, які потрібно замінити. (Спеціальні значення: "-space": замінює пробіл, "-random": вставляє у випадкову позицію, "-all": усе, "-start": на початку, "-end": у кінці.)
+# to: На що замінити.
+# pre: Слова та літери перед потрібним словом (розділювач ",").
+# match: true = одне з "pre"-слів повинно бути перед потрібним словом, false = жодне з "pre"-слів не повинно бути перед потрібним словом.
+# alcohol: 1-100 мінімальний рівень сп'яніння, після якого це слово замінюється.
+# percentage: Імовірність заміни слова у відсотках.
+
+
+words:
+  -  replace: s
+     to: sh
+     percentage: 90
+     alcohol: 30
+
+  -  replace: ch
+     to: sh
+     pre: u,s,o,a
+     match: false
+     alcohol: 10
+     percentage: 70
+
+  -  replace: h
+     to: hh
+     pre: sch,h,t
+     match: false
+     percentage: 60
+     alcohol: 20
+
+  -  replace: th
+     to: thl
+     percentage: 40
+     alcohol: 30
+
+  -  replace: ш
+     to: пш
+     percentage: 60
+     alcohol: 40
+
+  -  replace: у
+     to: уух
+     percentage: 20
+
+  -  replace: у
+     to: уу
+     percentage: 60
+     alcohol: 15
+
+  -  replace: е
+     to: ее
+     percentage: 40
+     alcohol: 15
+
+  -  replace: ти
+     to: и
+     percentage: 40
+
+  -  replace: у
+     to: уо
+     pre: u
+     match: false
+     percentage: 60
+
+  -  replace: that
+     to: taht
+     percentage: 20
+     alcohol: 40
+
+  -  replace: р
+     to: б
+     percentage: 30
+
+  -  replace: р
+     to: б
+     percentage: 70
+     alcohol: 60
+
+  -  replace: up
+     to: ubb
+     percentage: 80
+     alcohol: 25
+
+  -  replace: о
+     to: оо
+     percentage: 20
+
+  -  replace: ei
+     to: i
+     percentage: 30
+     alcohol: 15
+
+  -  replace: b
+     to: bb
+     percentage: 80
+     alcohol: 40
+
+  -  replace: '!!!'
+     to: '!!!111!!!одинадцять!1!'
+     pre: '!'
+     match: false
+     percentage: 20
+     alcohol: 70
+
+  -  replace: '!'
+     to: '!!'
+     pre: '!'
+     match: false
+     percentage: 90
+
+  -  replace: drunk
+     to: dhrkunn
+     pre: are
+     match: false
+     percentage: 70
+     alcohol: 65
+
+  - replace: сука
+    to: сцукаа
+    percentage: 60
+    alcohol: 40
+
+  - replace: бля
+    to: бблятб
+    percentage: 70
+    alcohol: 50
+
+  -  replace: ходити
+     to: ходтимт
+     pre: you can, you can still, you can not
+     match: false
+     percentage: 80
+     alcohol: 30
+
+  -  replace: wtf
+     to: wft
+     percentage: 20
+     alcohol: 40
+
+  -  replace: lol
+     to: loool
+     percentage: 80
+     alcohol: 10
+
+  -  replace: афк
+     to: ааафккккака
+     percentage: 30
+     alcohol: 30
+
+  -  replace: писати
+     to: пісятии
+     pre: you can,you can still,you can not
+     match: false
+     percentage: 80
+     alcohol: 50
+
+  -  replace: drink
+     to: booze
+     percentage: 80
+     alcohol: 70
+
+  -  replace: '?'
+     to: '????'
+     pre: '?'
+     match: false
+     percentage: 80
+     alcohol: 40
+
+  -  replace: -space
+     to: ''
+     pre: h,g,w
+     match: true
+     alcohol: 10
+
+  -  replace: -space
+     to: ''
+     percentage: 30
+     alcohol: 35
+
+  -  replace: -space
+     to: ''
+     percentage: 10
+
+  -  replace: -start
+     to: аву
+     percentage: 15
+     alcohol: 50
+
+  -  replace: -start
+     to: хпу
+     percentage: 10
+     alcohol: 50
+
+  -  replace: -random
+     to: лу
+     percentage: 10
+
+  -  replace: -random
+     to: луг
+     percentage: 10
+     alcohol: 50
+
+  -  replace: -random
+     to: бляха
+     percentage: 20
+     alcohol: 80
+
+  -  replace: -random
+     to: лерг
+     percentage: 40
+     alcohol: 85
+
+  -  replace: -random
+     to: гул
+     percentage: 40
+     alcohol: 80
+
+  -  replace: -random
+     to: ' '
+     percentage: 100
+     alcohol: 70
+
+  -  replace: -random
+     to: ' '
+     percentage: 60
+     alcohol: 40
+
+  -  replace: -random
+     to: ' '
+     percentage: 50
+     alcohol: 30
+
+  -  replace: -end
+     to: '!'
+     percentage: 40
+     alcohol: 30
+
+  -  replace: -random
+     to: ' *гик* '
+     percentage: 80
+     alcohol: 70
+
+  -  replace: -random
+     to: ' *гик* '
+     percentage: 15
+     alcohol: 40
+
+  -  replace: -space
+     to: ' *гик* '
+     percentage: 5
+     alcohol: 20
+
+  -  replace: -end
+     to: ' *гик*'
+     percentage: 70
+     alcohol: 50
+
+  -  replace: -all
+     to: '*риг*'
+     percentage: 3
+     alcohol: 60
+
+  -  replace: -all
+     to: '*риг*'
+     percentage: 6
+     alcohol: 80
+
+  - replace: -all
+    to: ТИ мнеп повжаєш??
+    percentage: 3
+    alcohol: 80

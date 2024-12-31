@@ -1,0 +1,133 @@
+# !!! IMPORTANT: BreweryX configuration files do NOT support external comments! If you add any comments, they will be overwritten !!!
+# Translations for BreweryX
+
+# Brew
+Brew_-times: -разів
+Brew_BadPotion: Зруйноване зілля
+Brew_BarrelRiped: Вік
+Brew_DistillUndefined: Мутний дистилят
+Brew_Distilled: Дистильовано
+Brew_LessDistilled: Менш дистильоване
+Brew_HundredsOfYears: Сотні років
+Brew_Ingredients: Інгредієнти
+Brew_MinutePluralPostfix: s
+Brew_OneYear: Один рік
+Brew_ThickBrew: Каламутна брага
+Brew_Undefined: Вариво з казана
+Brew_Woodtype: Тип дерева
+Brew_Years: Років
+Brew_fermented: ферментовано
+Brew_minute: хвилин
+Brew_Alc: Alc &v1ml
+Brew_Brewer: 'Пивовар: &v1'
+
+# CMD
+CMD_Copy_Error: '&6&v1 &cЗілля не помістилося у ваш інвентар'
+CMD_Info_Drunk: '&v1 на &6&v2% &fп''яний, з якістю &6&v3'
+CMD_Info_NotDrunk: '&v1 не п''яний'
+CMD_NonStatic: '&eНапій більше не статичний і старітиме у бочках.'
+CMD_Player: '&a&v1 тепер &6на &v2% &aп''яний, з якістю &6&v3'
+CMD_Player_Error: '&cЯкість повинна бути між 1 та 10!'
+CMD_Reload: '&aКонфігурація успішно перезавантажена'
+CMD_Created: '&aВариво створено'
+CMD_Configname: '&aІм''я для конфігурації: &f&v1'
+CMD_Configname_Error: '&cНе вдалося знайти предмет у вашій руці'
+CMD_Static: '&aНапій тепер статичний і не змінюватиметься у бочках чи варильних стійках.'
+CMD_UnLabel: '&aЕтикетка видалена!'
+CMD_Drink: '&aВи випили &v1'
+CMD_DrinkOther: '&a&v1 випиває &v2'
+CMD_Set: '&aУспішно встановлено сп''яніння &v1 на &v2 з якістю &v3.'
+
+# Error
+Error_ConfigUpdate: 'Невідома версія конфігурації Brewery: v&v1, конфігурацію не було
+  оновлено!'
+Error_ItemNotPotion: '&cПредмет у вашій руці не може бути ідентифікований як зілля!'
+Error_SealingTableDisabled: '&cСтіл для запечатування вимкнено'
+Error_SealedAlwaysStatic: Запечатані варива завжди статичні!
+Error_AlreadyUnlabeled: '&cНапій у вашій руці вже без етикетки!'
+Error_NoBarrelAccess: '&cУ вас немає дозволу на доступ до цієї бочки!'
+Error_NoBrewName: '&cНе знайдено рецепта з іменем: ''&v1&c'''
+Error_NoPermissions: '&cУ вас немає дозволу для виконання цієї дії!'
+Error_PlayerCommand: '&cЦю команду може виконувати лише гравець!'
+Error_Recipeload: '&cНе всі рецепти можна було відновити: Дивіться докладніше у серверному
+  журналі!'
+Error_ShowHelp: Використовуйте &6/brew help &fдля відображення довідки
+Error_UnknownCommand: Невідома команда
+Error_YmlRead: Неможливо прочитати файл config.yml, будь ласка, переконайтеся, що
+  файл має правильний формат yml (правильні відступи, використання '' тощо)'
+Error_NoPlayer: 'Гравця не знайдено: &v1'
+
+# Etc
+Etc_Barrel: Бочка
+Etc_Page: Сторінка
+Etc_Usage: 'Використання:'
+Etc_SealingTable: Стіл для запечатування варив
+
+# Help
+Help_Copy: '&6/brew copy [Кількість]&9 Копіює зілля у вашій руці'
+Help_Create: '&6/brew create <Рецепт> [Якість] [Гравець] &9Створює вариво з необов’язковою
+  якістю (1-10)'
+Help_Give: '&6/brew give <Рецепт> [Якість] [Гравець] &9Альтернатива для /brew create'
+Help_Delete: '&6/brew delete &9Видаляє зілля у вашій руці'
+Help_Help: '&6/brew help [Сторінка] &9Показує певну сторінку допомоги'
+Help_Info: '&6/brew info&9 Відображає ваш поточний рівень пияцтва та якість'
+Help_InfoOther: '&6/brew info [Гравець]&9 Відображає поточний рівень пияцтва та якість
+  [Гравця]'
+Help_Reload: '&6/brew reload &9Перезавантажує конфігурацію'
+Help_Configname: '&6/brew ItemName &9Відображає назву предмета в руці для конфігурації'
+Help_Static: '&6/brew static &9Зробити вариво статичним -> Без подальшого старіння
+  або дистиляції'
+Help_Set: '&6/brew set <гравець> <рівень пияцтва> [якість] &9Встановлює рівень пияцтва
+  (та якість) гравця'
+Help_UnLabel: '&6/brew unlabel &9Видаляє детальну етикетку зілля'
+Help_Seal: '&6/brew seal &9Запечатує вариво для продажу в магазинах'
+Help_Wakeup: '&6/brew wakeup list <Сторінка>&9 Перераховує всі точки пробудження'
+Help_WakeupAdd: '&6/brew wakeup add &9Додає точку пробудження у вашій поточній позиції'
+Help_WakeupCheck: '&6/brew wakeup check &9Телепортує до всіх точок пробудження'
+Help_WakeupCheckSpecific: '&6/brew wakeup check <id> &9Телепортує до точки пробудження
+  з <id>'
+Help_WakeupList: '&6/brew wakeup list <Сторінка> [Світ]&9 Перераховує всі точки пробудження
+  у <світі>'
+Help_WakeupRemove: '&6/brew wakeup remove <id> &9Видаляє точку пробудження з <id>'
+Help_Puke: '&6/brew puke [Гравець] [Кількість] &9Змушує вас або [Гравця] блювати'
+Help_Drink: '&6/brew drink <Рецепт> [Якість] [Гравець] &9Імітує, як [Гравець] п’є
+  вариво'
+
+# Perms
+Perms_NoBarrelCreate: '&cУ вас немає дозволу на створення бочок!'
+Perms_NoBigBarrelCreate: '&cУ вас немає дозволу на створення великих бочок!'
+Perms_NoCauldronFill: '&cУ вас немає дозволу на заповнення пляшок з цього казана!'
+Perms_NoCauldronInsert: '&cУ вас немає дозволу на додавання інгредієнтів у казан!'
+Perms_NoSmallBarrelCreate: '&cУ вас немає дозволу на створення малих бочок!'
+
+# Player
+Player_BarrelCreated: Бочку створено
+Player_BarrelFull: '&cЦя бочка не вміщує більше напоїв'
+Player_CantDrink: Тобі більше не можна пити, ти здурів?!
+Player_CauldronInfo1: Казан кипить вже &v1 хвилину
+Player_CauldronInfo2: Цей казан щойно закипів
+Player_DrunkPassOut: Ти випив занадто багато і втратив свідомість
+Player_LoginDeny: Ваш персонаж намагається приєднатись, але занадто сильно напився.
+  Спробуйте ще раз!
+Player_LoginDenyLong: Ваш персонаж забагато випив і втратив свідомість. Спробуйте
+  ще раз через 10 хвилин!
+Player_TriedToSay: '&v1 намагався сказати: &0&v2'
+Player_Wake: О, ні! Я не пам'ятаю, як я тут опинився...
+Player_WakeAlreadyDeleted: '&cТочка пробудження з ідентифікатором: &6&v1 &cвже видалена!'
+Player_WakeCancel: '&6Перевірку точки пробудження скасовано'
+Player_WakeCreated: '&aТочку пробудження з ідентифікатором: &6&v1 &aуспішно створено!'
+Player_WakeDeleted: '&aТочку пробудження з ідентифікатором: &6&v1 &aуспішно видалено!'
+Player_WakeFilled: '&cТочка пробудження з ідентифікатором: &6&v1&c у позиції &6&v2
+  &v3, &v4, &v5&c заповнена блоками!'
+Player_WakeHint1: 'До наступної точки пробудження: Махніть рукою у повітрі'
+Player_WakeHint2: 'Щоб скасувати: &9/brew wakeup cancel'
+Player_WakeLast: '&aЦе була остання точка пробудження'
+Player_WakeNoCheck: '&cПеревірка точки пробудження наразі не активна'
+Player_WakeNoPoints: '&cНемає точок пробудження!'
+Player_WakeNotExist: '&cТочки пробудження з ідентифікатором: &6&v1 &cне існує!'
+Player_WakeTeleport: 'Телепортування до точки пробудження з ідентифікатором: &6&v1&f
+  У позиції: &6&v2 &v3, &v4, &v5'
+Player_ShopSealBrew: '&eРекомендується торгувати/продавати &6запечатані &eнапої'
+Player_Drunkeness: Пияцтво
+Player_Hangover: Твоє похмілля
+
